@@ -33,21 +33,18 @@ const colorMap = {
     border: 'border-emerald-500/20',
     icon: 'text-emerald-400',
     step: 'text-emerald-500',
-    connector: 'from-emerald-500/30',
   },
   blue: {
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/20',
     icon: 'text-blue-400',
     step: 'text-blue-500',
-    connector: 'from-blue-500/30',
   },
   gold: {
     bg: 'bg-yellow-500/10',
     border: 'border-yellow-500/20',
     icon: 'text-yellow-400',
     step: 'text-yellow-500',
-    connector: 'from-yellow-500/30',
   },
 }
 
@@ -108,7 +105,7 @@ export default function ProcessSection() {
                   {step.detail}
                 </p>
 
-                {/* Connector arrow (hidden on last) */}
+                {/* Connector line (hidden on last) */}
                 {i < steps.length - 1 && (
                   <div
                     className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 z-20"
@@ -122,47 +119,104 @@ export default function ProcessSection() {
           })}
         </div>
 
-        {/* Founder Message */}
-        <div className="max-w-3xl mx-auto">
-          <div className="card-glass p-8 lg:p-10 rounded-2xl border border-emerald-500/20 relative overflow-hidden">
+        {/* ══ Founder Message Card ══ */}
+        <div className="max-w-5xl mx-auto animate-scale-in">
+          {/* Gradient border wrapper */}
+          <div className="relative p-px rounded-2xl overflow-hidden">
             <div
-              className="absolute top-0 left-0 right-0 h-px"
+              className="absolute inset-0 rounded-2xl"
               style={{
-                background: 'linear-gradient(90deg, transparent, rgba(16,185,129,0.5), transparent)',
+                background:
+                  'linear-gradient(135deg, rgba(16,185,129,0.5) 0%, rgba(59,130,246,0.2) 50%, rgba(16,185,129,0.15) 100%)',
               }}
               aria-hidden="true"
             />
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
-              {/* Avatar placeholder */}
+
+            {/* Card body */}
+            <div className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden">
+              {/* Top accent line */}
               <div
-                className="w-20 h-20 rounded-2xl bg-gradient-to-br from-navy-700 to-navy-800 border border-emerald-500/20 flex-shrink-0 flex items-center justify-center text-3xl"
+                className="absolute top-0 left-0 right-0 h-px"
+                style={{
+                  background: 'linear-gradient(90deg, transparent, rgba(16,185,129,0.6), transparent)',
+                }}
                 aria-hidden="true"
-              >
-                🔬
-              </div>
-              <div>
-                <div className="mb-1">
-                  <span className="text-emerald-400 text-xs font-mono font-semibold tracking-widest uppercase">
+              />
+
+              <div className="flex flex-col lg:flex-row gap-0">
+
+                {/* ── Portrait image ── */}
+                <div className="w-full lg:w-80 xl:w-96 flex-shrink-0 animate-fade-in">
+                  <div className="relative h-72 lg:h-full min-h-[340px]">
+                    <img
+                      src="/images/peritojony-03.jpg"
+                      alt="Jonilson, Perito Forense Digital"
+                      className="w-full h-full object-cover object-top"
+                      loading="lazy"
+                      width="384"
+                      height="512"
+                    />
+                    {/* Gradient overlay from right on desktop, from bottom on mobile */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          'linear-gradient(to right, transparent 60%, rgba(15,20,40,0.7) 100%), linear-gradient(to top, rgba(15,20,40,0.5) 0%, transparent 40%)',
+                      }}
+                      aria-hidden="true"
+                    />
+                    {/* Mobile overlay (fades into card below) */}
+                    <div
+                      className="lg:hidden absolute bottom-0 left-0 right-0 h-20"
+                      style={{
+                        background: 'linear-gradient(to top, rgba(15,20,40,0.95), transparent)',
+                      }}
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+
+                {/* ── Quote / Founder text ── */}
+                <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center animate-fade-in-right">
+                  {/* Label */}
+                  <span className="text-emerald-400 text-xs font-mono font-semibold tracking-widest uppercase mb-6 block">
                     Mensagem do Fundador
                   </span>
+
+                  {/* Big decorative quote mark */}
+                  <div
+                    className="text-8xl lg:text-9xl font-serif text-emerald-500/20 leading-none select-none mb-2 -mt-4"
+                    aria-hidden="true"
+                  >
+                    "
+                  </div>
+
+                  <blockquote className="-mt-8">
+                    <p className="text-slate-200 text-lg lg:text-xl leading-relaxed font-light mb-6">
+                      Sou{' '}
+                      <span className="text-white font-bold">Jonilson</span>, Perito em Dados. Já vi negócios quase
+                      falirem por falhas de disco e famílias chorarem por memórias perdidas. Meu foco não é apenas{' '}
+                      <em className="text-slate-400 not-italic italic">'consertar computadores'</em>, é{' '}
+                      <span className="text-emerald-400 font-semibold">devolver a sua paz de espírito</span> usando o
+                      mais alto rigor técnico da ciência forense digital.
+                    </p>
+                  </blockquote>
+
+                  <footer className="pt-6 border-t border-slate-700/60">
+                    <p className="text-white font-bold text-lg">Jonilson</p>
+                    <p className="text-slate-400 text-sm mt-0.5">Perito em Dados &amp; Forense Digital</p>
+                    <div className="flex items-center gap-2 mt-4">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
+                      <span className="text-xs text-slate-500 font-mono">Atendimento disponível agora</span>
+                    </div>
+                  </footer>
                 </div>
-                <blockquote>
-                  <p className="text-slate-200 leading-relaxed mb-4">
-                    "Sou <span className="text-white font-bold">Jonilson</span>, Perito em Dados. Já vi negócios quase falirem
-                    por falhas de disco e famílias chorarem por memórias perdidas. Meu foco não é apenas{' '}
-                    <span className="text-slate-400 italic">'consertar computadores'</span>, é{' '}
-                    <span className="text-emerald-400 font-semibold">devolver a sua paz de espírito</span> usando o mais alto
-                    rigor técnico da ciência forense digital."
-                  </p>
-                </blockquote>
-                <footer>
-                  <p className="text-white font-bold">Jonilson</p>
-                  <p className="text-slate-500 text-sm">Perito em Dados & Forense Digital</p>
-                </footer>
+
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )

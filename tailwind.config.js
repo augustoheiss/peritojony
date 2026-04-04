@@ -33,6 +33,9 @@ export default {
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'fade-in-right': 'fadeInRight 0.8s ease-out forwards',
+        'scale-in': 'scaleIn 0.7s ease-out forwards',
         'pulse-slow': 'pulse 3s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite',
       },
@@ -40,6 +43,18 @@ export default {
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'translateX(30px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.96)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
         glow: {
           '0%, 100%': { boxShadow: '0 0 5px rgba(52, 211, 153, 0.3)' },
