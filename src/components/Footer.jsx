@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Shield, MessageCircle, Mail, Instagram, Linkedin, Twitter, ExternalLink } from 'lucide-react'
 
 // WhatsApp SVG icon (not in Lucide)
@@ -21,12 +22,6 @@ export default function Footer() {
     { label: 'Serviços', href: '#servicos' },
     { label: 'Preços', href: '#precos' },
     { label: 'FAQ', href: '#faq' },
-  ]
-
-  const legalLinks = [
-    { label: 'Política de Privacidade', href: '#privacidade' },
-    { label: 'Termos de Uso', href: '#termos' },
-    { label: 'Sigilo e NDA', href: '#nda' },
   ]
 
   const socialLinks = [
@@ -143,16 +138,14 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Legal</h4>
               <ul className="space-y-3 mb-8" role="list">
-                {legalLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-slate-400 hover:text-slate-300 transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    to="/termos"
+                    className="text-sm text-slate-400 hover:text-emerald-400 transition-colors duration-200"
+                  >
+                    Termos de Uso e Privacidade
+                  </Link>
+                </li>
               </ul>
 
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Redes Sociais</h4>
