@@ -5,12 +5,8 @@ export default function LegalPage() {
   const PROFESSIONAL_NAME = 'Perito Jony (Jonilson)'
   const EMAIL = 'jonyperito2001@gmail.com'
   const WHATSAPP = '(11) 96103-0036'
-  const SERVICE_DESCRIPTION = 'recuperação forense de dados em SSDs, HDDs, dispositivos móveis e bancos de dados corrompidos'
-  const LAST_UPDATED = new Date().toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  })
+  const SERVICE_DESCRIPTION = 'recuperação forense de dados em SSDs, HDDs, dispositivos móveis, bancos de dados corrompidos e assistência técnica pericial'
+  const LAST_UPDATED = '20 de outubro de 2026 — Padrão de Conformidade v3.0'
 
   const sections = [
     {
@@ -21,19 +17,31 @@ export default function LegalPage() {
         {
           id: '1.1',
           title: 'Descrição dos Serviços',
-          content: `Este site tem como objetivo apresentar e facilitar o contato para os serviços de ${SERVICE_DESCRIPTION}, oferecidos por ${PROFESSIONAL_NAME}.`,
+          content: `Este site tem como objetivo apresentar e facilitar o contato para os serviços de ${SERVICE_DESCRIPTION}, oferecidos de forma autônoma por ${PROFESSIONAL_NAME}.`,
         },
         {
           id: '1.2',
-          title: 'Contato e Agendamentos',
+          title: 'Contato, Triagem Técnica e Agendamentos',
           content:
-            'Os contatos, orçamentos e agendamentos realizados através dos botões de redirecionamento deste site (como WhatsApp e E-mail) são de inteira responsabilidade do usuário e do profissional prestador do serviço. O site funciona apenas como um canal de vitrine e facilitação de comunicação.',
+            'Os contatos, diagnósticos preliminares, orçamentos e agendamentos realizados através dos botões de redirecionamento deste site (como WhatsApp e E-mail) são de inteira responsabilidade do usuário e do perito prestador do serviço. O site funciona exclusivamente como um canal de vitrine institucional e facilitação de comunicação inicial.',
         },
         {
           id: '1.3',
-          title: 'Isenção de Responsabilidade Técnica',
+          title: 'Segredo de Justiça (CPC Art. 189) e Cadeia de Custódia Forense',
           content:
-            'A infraestrutura web, design e código-fonte deste site foram desenvolvidos de forma terceirizada. O desenvolvedor responsável pela criação da página não possui vínculos societários, não atua no atendimento aos clientes e não se responsabiliza pela prestação dos serviços ofertados, promessas comerciais, ou pela gestão e armazenamento dos dados trocados diretamente com o profissional após o redirecionamento.',
+            'Por razões de segurança forense e sigilo processual (Art. 189 do Código de Processo Civil), é estritamente vedado o envio ou upload não solicitado de autos processuais sob Segredo de Justiça, mídias sensíveis ou evidências digitais críticas através de canais abertos sem prévia formalização de contrato de confidencialidade (NDA/Termo de Custódia) e definição de canal criptografado diretamente com o Perito.',
+        },
+        {
+          id: '1.4',
+          title: 'Isenção de Responsabilidade Técnica, Repositório Público e Cláusula de Indenização (Hold Harmless)',
+          content:
+            'A arquitetura de software, design e código-fonte desta plataforma foram desenvolvidos de forma independente sob o modelo AS-IS ("no estado em que se encontra"). Por razões de transparência tecnológica, auditoria de segurança da informação e portfólio de engenharia de software, o código-fonte de apresentação (front-end) pode estar hospedado em repositório público (GitHub), contendo exclusivamente marcação estrutural e metadados públicos de divulgação comercial expressamente autorizados pelo Controlador. O engenheiro de software responsável pelo desenvolvimento não possui vínculo societário com o Perito, não possui acesso físico ou lógico às mídias periciadas, não emite laudos ou pareceres técnicos judiciais e não detém responsabilidade solidária ou subsidiária (Art. 42 da LGPD) pelos serviços forenses prestados ou pelos dados tratados após o redirecionamento externo.',
+        },
+        {
+          id: '1.5',
+          title: 'Propriedade Intelectual e Reserva de Direitos em Repositório Público',
+          content:
+            'A disponibilização pública do código-fonte para fins de transparência técnica e portfólio não concede licença de uso sobre a marca, nome profissional, fotografias, certificações ou textos técnicos desta página, os quais permanecem protegidos pela Lei de Direitos Autorais (Lei nº 9.610/1998) e pela Lei da Propriedade Industrial (Lei nº 9.279/1996). É vedada a clonagem comercial ou uso indevido de identidade profissional.',
         },
       ],
     },
@@ -42,45 +50,52 @@ export default function LegalPage() {
       number: '2',
       title: 'Política de Privacidade (LGPD)',
       intro:
-        'Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), detalhamos como tratamos as suas informações:',
+        'Em conformidade com a Lei Geral de Proteção de Dados (Lei Federal nº 13.709/2018), detalhamos de forma transparente como tratamos as suas informações:',
       subsections: [
         {
           id: '2.1',
-          title: 'Coleta de Dados',
-          content: `Nós coletamos apenas as informações estritamente necessárias para a prestação do serviço ou atendimento. Quando você clica em nossos botões de contato (WhatsApp ou E-mail), os dados fornecidos voluntariamente por você (como seu nome, número de telefone e conteúdo da mensagem) são recebidos diretamente por ${PROFESSIONAL_NAME}. Este site não possui bancos de dados ocultos que capturam suas informações sem o seu consentimento.`,
+          title: 'Coleta Mínima e Processamento 100% Local (Client-Side)',
+          content: `Adotamos o princípio da minimização de dados (Art. 6º, III da LGPD). Toda a navegação nesta página ocorre exclusivamente na memória do navegador do próprio usuário (Client-Side), sem bancos de dados ocultos ou servidores intermediários de captura. Quando você aciona nossos botões de contato (WhatsApp ou E-mail), os dados fornecidos voluntariamente por você são recebidos diretamente por ${PROFESSIONAL_NAME} nos canais oficiais criptografados.`,
         },
         {
           id: '2.2',
-          title: 'Uso dos Dados',
-          content: 'Os dados fornecidos por você serão utilizados única e exclusivamente para:',
+          title: 'Finalidade e Bases Legais do Tratamento (Art. 7º da LGPD)',
+          content: 'Os dados fornecidos voluntariamente pelo titular fundamentam-se nas seguintes bases legais e finalidades estritas:',
           list: [
-            'Retornar o seu contato e responder a dúvidas;',
-            'Enviar orçamentos e realizar agendamentos;',
-            'Prestar o serviço contratado;',
-            'Enviar atualizações estritamente relacionadas ao serviço solicitado.',
+            'Procedimentos Preliminares e Execução de Contrato (Art. 7º, V): Retornar o contato, avaliar a viabilidade técnica de recuperação/perícia, enviar orçamentos e executar o serviço contratado;',
+            'Exercício Regular de Direitos em Processo Judicial, Administrativo ou Arbitral (Art. 7º, VI): Quando aplicável à assistência técnica pericial contratada;',
+            'Cumprimento de Obrigação Legal ou Regulatória (Art. 7º, II): Emissão fiscal e cumprimento de normas técnicas e judiciais;',
+            'Legítimo Interesse (Art. 7º, IX): Segurança cibernética e prevenção a fraudes.',
           ],
         },
         {
           id: '2.3',
-          title: 'Compartilhamento de Informações',
+          title: 'Compartilhamento de Informações e Sigilo Pericial',
           content:
-            'Nós não vendemos, alugamos ou compartilhamos seus dados pessoais com terceiros para fins de marketing ou qualquer outra finalidade que não seja o cumprimento do serviço solicitado, exceto se exigido por lei ou determinação judicial.',
+            'Nós não vendemos, alugamos ou compartilhamos seus dados pessoais ou informações técnicas com terceiros para fins de marketing ou qualquer outra finalidade alheia ao serviço contratado, observando rigoroso sigilo profissional e cadeia de custódia, exceto se exigido por lei ou determinação judicial.',
         },
         {
           id: '2.4',
-          title: 'Cookies e Tecnologias de Rastreamento',
+          title: 'Cookies, Armazenamento Técnico e Zero-Tracking',
           content:
-            'Este site pode utilizar cookies básicos e ferramentas de análise (como o Google Analytics) apenas para entender o volume de acessos e melhorar a sua experiência de navegação. Nenhuma informação pessoal identificável é extraída através desses cookies funcionais.',
+            'Esta aplicação segue o princípio de Privacy by Design e não utiliza cookies de rastreamento publicitário invasivo, pixels de retargeting ou comercialização de perfil comportamental. Apenas recursos técnicos essenciais do navegador são utilizados para garantir o carregamento seguro e responsivo da interface.',
         },
         {
           id: '2.5',
-          title: 'Seus Direitos',
-          content: 'Você tem o direito de solicitar a qualquer momento:',
+          title: 'Direitos do Titular dos Dados (Art. 18 da LGPD)',
+          content: 'Nos termos do Art. 18 da LGPD, você tem o direito de solicitar ao Controlador a qualquer momento:',
           list: [
-            'A confirmação da existência de tratamento dos seus dados;',
+            'A confirmação da existência de tratamento e o acesso aos seus dados pessoais;',
             'A correção de dados incompletos, inexatos ou desatualizados;',
-            'A exclusão dos seus dados dos nossos contatos comerciais.',
+            'A anonimização, bloqueio ou exclusão dos seus dados dos contatos comerciais;',
+            'A revogação do consentimento (Art. 18, IX), com resposta em até 15 (quinze) dias conforme o Art. 19, II da LGPD.',
           ],
+        },
+        {
+          id: '2.6',
+          title: 'Proteção dos Dados Públicos do Perito — Vedação de Scraping e Spam (Art. 7º, §§ 3º e 4º da LGPD)',
+          content:
+            'Os dados de contato profissional (WhatsApp, e-mail e identificação técnica) disponibilizados publicamente nesta página e no código-fonte público têm como única e estrita finalidade permitir o contato comercial e técnico por potenciais clientes e operadores do Direito (Art. 7º, §§ 3º e 4º da LGPD). É expressamente proibida a coleta automatizada (web scraping, crawling, mineração por bots), a inclusão em listas de spam ou telemarketing, a comercialização por data brokers ou o uso para treinamento de inteligência artificial sem autorização expressa.',
         },
       ],
     },
@@ -198,12 +213,12 @@ export default function LegalPage() {
                 <UserCheck className="w-5 h-5 text-gold-400" aria-hidden="true" />
               </div>
               <h2 className="text-xl font-bold text-white">
-                2.6. Contato do Controlador de Dados
+                2.7. Contato do Controlador de Dados e Alerta Antifraude
               </h2>
             </div>
             <p className="text-slate-400 leading-relaxed mb-6 ml-14">
               Para exercer seus direitos ou tirar dúvidas sobre esta política, entre em contato diretamente
-              com o responsável pelo tratamento dos dados:
+              com o responsável pelo tratamento dos dados exclusivamente pelos canais oficiais abaixo (o Perito jamais solicita senhas bancárias, códigos SMS/WhatsApp de 6 dígitos ou pagamentos Pix para contas de terceiros desconhecidos):
             </p>
             <div className="ml-14 space-y-3">
               <div className="flex items-center gap-3">
